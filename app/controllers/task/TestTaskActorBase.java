@@ -33,7 +33,7 @@ public class TestTaskActorBase {
         if(!Play.isTest()) {
 
             // 1分に1回
-            //Time.CronExpression e = new Time.CronExpression("1 * * * * ?");
+            Time.CronExpression e = new Time.CronExpression("1 * * * * ?");
             // 1時間に1回
             //Time.CronExpression e = new Time.CronExpression("1 1 20 * * ?");
             // 1日に1回
@@ -41,7 +41,7 @@ public class TestTaskActorBase {
             // 1月に1回
             //Time.CronExpression e = new Time.CronExpression("30 5 20 26 * ?");
             // 1週間に1回
-            Time.CronExpression e = new Time.CronExpression("55 29 20 ? * 5");
+            //Time.CronExpression e = new Time.CronExpression("55 29 20 ? * 5");
             Date nextValidTimeAfter = e.getNextValidTimeAfter(new Date());
             FiniteDuration d = Duration.create(
                     nextValidTimeAfter.getTime() - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
